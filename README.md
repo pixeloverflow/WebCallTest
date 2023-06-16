@@ -6,15 +6,20 @@ UMG初始化的时候调用LoadURL方法加载页面。
 ![](Images\1.png)
 如果需要跳转页面，要重载或绑定OnBeforePopup事件，拿到URL直接加载即可跳转
 ![](Images\2.png)
+
 Slate
+---
 SWebBrowser
-Slate类比较重要的函数就是Construct
+------
+Slate类比较重要的函数：Construct
 ![](Images\3.png)
-可以看到SWebBrowser中，承载Web功能的主要slate类的功能是SWebBrowserView这个类，ue在不同的操作系统上配置了不同的浏览器内核，Windows平台使用了CEF3，Chromium的开源项目.
+
+在SWebBrowser中，承载Web功能的主要slate类的功能是SWebBrowserView这个类，ue在不同的操作系统上配置了不同的浏览器内核，Windows平台使用了CEF3，Chromium的开源项目.
+
 这里有比较重要的几个事件和方法：
-OnLoadCompleted：网页加载完成回调，这个回调是当页面加载好后触发
-OnBeforePopup：页面跳转前会触发，通常用于处理页面跳转
-OnCreateWindow：OnBeforePopup返回false后触发
+- OnLoadCompleted：网页加载完成回调，这个回调是当页面加载好后触发
+- OnBeforePopup：页面跳转前会触发，通常用于处理页面跳转
+- OnCreateWindow：OnBeforePopup返回false后触发
 
 JS注入
 ---
